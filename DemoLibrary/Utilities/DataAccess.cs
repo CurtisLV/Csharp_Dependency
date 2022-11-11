@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary.Utilities
 {
-    public class DataAccess
+    public class DataAccess : IDataAccess
     {
         public void LoadData()
         {
@@ -15,7 +15,7 @@ namespace DemoLibrary.Utilities
 
         public void SaveData(string name)
         {
-            Console.WriteLine($"Saving { name }");
+            Console.WriteLine($"Saving {name}");
         }
     }
 }
