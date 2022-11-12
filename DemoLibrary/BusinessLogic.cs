@@ -9,6 +9,15 @@ namespace DemoLibrary
 {
     public class BusinessLogic : IBusinessLogic
     {
+        ILogger _logger;
+        IDataAccess _dataAccess;
+
+        public BusinessLogic(ILogger logger, IDataAccess dataAccess)
+        {
+            _logger = logger;
+            _dataAccess = dataAccess;
+        }
+
         public void ProcessData()
         {
             Logger logger = new Logger();
