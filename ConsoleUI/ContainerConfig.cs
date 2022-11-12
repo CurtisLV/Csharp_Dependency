@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -18,6 +19,11 @@ namespace ConsoleUI
             // whenever one is looking for IBusinessLogic, BusinessLogic will be returned
             // respond with BusinessLogic whenever anyone needs IBusinessLogic item (new IBusinessLogic)
             builder.RegisterType<BusinessLogic>().As<IBusinessLogic>();
+
+            builder
+                .RegisterAssemblyTypes(Assembly.Load(nameof(DemoLibrary)))
+                .Where(t => t.Namespace.Contains("Utilities"))
+                .As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == "I" + t.Name));
 
             return builder.Build();
         }
