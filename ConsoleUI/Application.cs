@@ -18,7 +18,7 @@ namespace ConsoleUI
 
         public void Run()
         {
-            //
+            _businessLogic.ProcessData();
         }
     }
 }
