@@ -16,7 +16,7 @@ namespace ConsoleUI
             // registering the class
             // whenever one is looking for IBusinessLogic, BusinessLogic will be returned
             // respond with BusinessLogic whenever anyone needs IBusinessLogic item (new IBusinessLogic)
-            builder.RegisterType<BusinessLogic>().As<IBusinessLogic>();
+            builder.RegisterType<BetterBusinessLogic>().As<IBusinessLogic>();
 
             builder
                 .RegisterAssemblyTypes(Assembly.Load(nameof(DemoLibrary)))
