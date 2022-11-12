@@ -7,7 +7,7 @@ using DemoLibrary;
 
 namespace ConsoleUI
 {
-    public class Application
+    public class Application : IApplication
     {
         IBusinessLogic _businessLogic;
 
